@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<project name="AS_23" default="copy">
+    <target name="init">
+        <property name="TOM_CAT" value="C:\Program Files\Apache Software Foundation\Tomcat 10.1\webapps"/>
+        <property name="JAVA" value="C:\univer\semester_7\JAVA\labs\Lab1"/>
+    </target>
+    <target name="create" depends="init">
+        <delete dir="${TOM_CAT}\AS_24"/>
+        <mkdir dir="${TOM_CAT}\AS_24"/>
+        <mkdir dir="${TOM_CAT}\AS_24\WEB-INF"/>
+        <mkdir dir="${TOM_CAT}\AS_24\images"/>
+    </target>
+    <target name="copy" depends="create">
+        <copy file="${JAVA}\index.html" todir="${TOM_CAT}\AS_24"/>
+        <copy file="${JAVA}\address.html" todir="${TOM_CAT}\AS_24"/>
+        <copy file="${JAVA}\education.html" todir="${TOM_CAT}\AS_24"/>
+        <copy file="${JAVA}\web.xml" todir="${TOM_CAT}\AS_24\WEB-INF"/>
+        <copy file="${JAVA}\images\images.jpg" todir="${TOM_CAT}\AS_24\images"/>
+    </target>
+</project>
